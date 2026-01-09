@@ -5,7 +5,7 @@
 
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { getUserSettings, saveUserSettings, UserSettings } from '@/utils/settingsUtils';
 
 interface SettingsPanelProps {
@@ -14,21 +14,22 @@ interface SettingsPanelProps {
 }
 
 export default function SettingsPanel({ isOpen, onClose }: SettingsPanelProps) {
-  const [settings, setSettings] = useState<UserSettings>({
-    clothingStyle: 'casual',
-    activityLevel: 'moderate',
-    tempSensitivity: 'normal',
-    morningBriefing: true,
-    units: 'metric',
-    language: 'en',
+  const [settings, setSettings] = useState<UserSettings>(() => {
+    // Initialize state with stored settings
+    if (typeof window !== 'undefined') {
+      return getUserSettings();
+    }
+    return {
+      clothingStyle: 'casual',
+      activityLevel: 'moderate',
+      tempSensitivity: 'normal',
+      morningBriefing: true,
+      units: 'metric',
+      language: 'en',
+    };
   });
 
-  useEffect(() => {
-    const loadedSettings = getUserSettings();
-    setSettings(loadedSettings);
-  }, []);
-
-  const handleChange = (key: keyof UserSettings, value: any) => {
+  const handleChange = (key: keyof UserSettings, value: string | boolean) => {
     const newSettings = { ...settings, [key]: value };
     setSettings(newSettings);
     saveUserSettings({ [key]: value });

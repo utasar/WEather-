@@ -53,7 +53,6 @@ export class NotificationLogic {
       badge: '/icons/icon-96x96.png',
       tag: alert.type,
       requireInteraction: alert.severity === 'high',
-      vibrate: alert.severity === 'high' ? [200, 100, 200] : [100],
     };
 
     new Notification(alert.title, options);

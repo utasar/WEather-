@@ -109,7 +109,7 @@ export default function Dashboard() {
       if (hasUserMoved(currentLoc, 10)) {
         await fetchWeatherData(currentLoc);
       }
-    } catch (err) {
+    } catch {
       setError('Failed to get location. Please enable location services.');
     }
   }, [fetchWeatherData]);
@@ -125,7 +125,7 @@ export default function Dashboard() {
         const currentLoc = await getCurrentLocation();
         setLocation(currentLoc);
         await fetchWeatherData(currentLoc);
-      } catch (err) {
+      } catch {
         setError('Failed to get location. Please enable location services.');
         setLoading(false);
       }

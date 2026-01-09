@@ -8,11 +8,21 @@ import { NextRequest, NextResponse } from 'next/server';
 import OpenAI from 'openai';
 import axios from 'axios';
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
-
 const OPENWEATHER_API_KEY = process.env.OPENWEATHER_API_KEY;
+
+// Lazy initialize OpenAI client
+let openaiClient: OpenAI | null = null;
+
+function getOpenAIClient(): OpenAI {
+  if (!openaiClient) {
+    const apiKey = process.env.OPENAI_API_KEY;
+    if (!apiKey) {
+      throw new Error('OPENAI_API_KEY is not configured');
+    }
+    openaiClient = new OpenAI({ apiKey });
+  }
+  return openaiClient;
+}
 
 interface WeatherRequest {
   lat: number;
@@ -86,9 +96,18 @@ export async function POST(request: NextRequest) {
 }
 
 async function generateAIRecommendations(
-  currentWeather: any,
-  forecast: any,
-  destinationWeather: any,
+  currentWeather: {
+    main: { temp: number; feels_like: number; humidity: number };
+    weather: Array<{ main: string; description: string }>;
+    wind: { speed: number };
+    name: string;
+  },
+  forecast: unknown,
+  destinationWeather: {
+    main: { temp: number };
+    weather: Array<{ description: string }>;
+    name: string;
+  } | null,
   settings?: WeatherRequest['settings']
 ) {
   const temp = currentWeather.main.temp;
@@ -160,7 +179,7 @@ Please provide:
 Keep responses concise, friendly, and actionable. Tailor everything to the user's preferences.`;
 
   try {
-    const completion = await openai.chat.completions.create({
+    const completion = await getOpenAIClient().chat.completions.create({
       model: 'gpt-4o-mini',
       messages: [
         {
