@@ -1,18 +1,18 @@
-# Nova - AI Life Assistant ✨
+# Nova - AI Life Assistant 
 
 Nova is an intelligent weather-based life assistant that provides personalized recommendations, daily mantras, and travel insights powered by AI. Built with Next.js, TypeScript, and OpenAI.
 
-## 🌟 Features
+## Features
 
 ### Core Features
-- **🤖 AI-Powered Recommendations**: Personalized clothing, activities, and health tips based on weather conditions
-- **📍 Dynamic Location Tracking**: Automatically detects when you move beyond 10 km and updates recommendations
-- **✈️ Traveler Mode**: Compare current location with destination and get packing lists and travel tips
-- **🔊 Voice Synthesis**: "Speak" button reads daily mantras and greetings aloud
-- **⚙️ Settings & Personalization**: Customize clothing style, activity level, and temperature sensitivity
-- **🔔 Push Notifications**: Weather anomaly alerts (storms, extreme heat/cold, high winds)
-- **💎 Glassmorphic UI**: Beautiful, modern interface with Tailwind CSS
-- **📱 PWA Support**: Install on mobile devices for a native-like experience
+- ** AI-Powered Recommendations**: Personalized clothing, activities, and health tips based on weather conditions
+- ** Dynamic Location Tracking**: Automatically detects when you move beyond 10 km and updates recommendations
+- ** Traveler Mode**: Compare current location with destination and get packing lists and travel tips
+- **Voice Synthesis**: "Speak" button reads daily mantras and greetings aloud
+- ** Settings & Personalization**: Customize clothing style, activity level, and temperature sensitivity
+- ** Push Notifications**: Weather anomaly alerts (storms, extreme heat/cold, high winds)
+- ** Glassmorphic UI**: Beautiful, modern interface with Tailwind CSS
+- ** PWA Support**: Install on mobile devices for a native-like experience
 
 ### Technical Features
 - Server-side rendering with Next.js App Router
@@ -23,7 +23,7 @@ Nova is an intelligent weather-based life assistant that provides personalized r
 - Local storage for user preferences and location tracking
 - Responsive design for all screen sizes
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 - Node.js 18+ 
@@ -67,7 +67,7 @@ npm run dev
 
 Navigate to [http://localhost:3000](http://localhost:3000)
 
-## 🏗️ Project Structure
+##  Project Structure
 
 ```
 ├── app/
@@ -105,7 +105,7 @@ Navigate to [http://localhost:3000](http://localhost:3000)
 2. Follow the prompts to install
 3. Nova will open in its own window
 
-## 🎨 Customization
+##  Customization
 
 ### User Settings
 Access settings by clicking the ⚙️ icon to customize:
@@ -116,11 +116,11 @@ Access settings by clicking the ⚙️ icon to customize:
 - **Units**: Metric or Imperial
 
 ### Traveler Mode
-1. Click the ✈️ Traveler button
+1. Click the Traveler button
 2. Enter destination coordinates (latitude, longitude)
 3. Get comparison, packing list, and travel tips
 
-## 🔧 Development
+## Development
 
 ### Build for production
 ```bash
@@ -137,7 +137,7 @@ npm start
 npm run lint
 ```
 
-## 🌐 Deployment
+##  Deployment
 
 ### Vercel (Recommended)
 1. Push your code to GitHub
@@ -156,14 +156,14 @@ This is a standard Next.js app and can be deployed on:
 
 **Important**: Don't forget to set environment variables on your hosting platform!
 
-## 🔐 Security Notes
+##  Security Notes
 
 - Never commit `.env.local` to version control
 - Keep API keys secure and rotate them regularly
 - Use environment variables for all sensitive data
 - The `.env.local.example` file is safe to commit
 
-## 🤝 Contributing
+##  Contributing
 
 This is a practice and fun project! Feel free to:
 - Fork the repository
@@ -171,11 +171,9 @@ This is a practice and fun project! Feel free to:
 - Submit pull requests
 - Report issues
 
-## 📄 License
 
-This project is open source and available for educational purposes.
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - Built with [Next.js](https://nextjs.org/)
 - Powered by [OpenAI](https://openai.com/)
@@ -184,4 +182,4 @@ This project is open source and available for educational purposes.
 
 ---
 
-**Version 1.0** - Ready for deployment! 🎉
+**Version 1.0** - Ready for deployment! 
