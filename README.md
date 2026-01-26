@@ -92,7 +92,7 @@ Navigate to [http://localhost:3000](http://localhost:3000)
 └── .env.local.example             # Environment variables template
 ```
 
-## 📱 PWA Installation
+##  PWA Installation
 
 ### Mobile (iOS/Android)
 1. Open the app in your mobile browser
